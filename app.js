@@ -22,10 +22,10 @@ function reset() {
   sec = 0;
   count = 0;
 
-  document.getElementById("hr").innerHTML = hr;
-  document.getElementById("min").innerHTML = min;
-  document.getElementById("sec").innerHTML = sec;
-  document.getElementById("count").innerHTML = count;
+  document.getElementById("hr").innerHTML = "00";
+  document.getElementById("min").innerHTML = "00";
+  document.getElementById("sec").innerHTML = "00";
+  document.getElementById("count").innerHTML = "00";
 }
 
 function stopwatch() {
@@ -45,10 +45,31 @@ function stopwatch() {
       min = 0;
       sec = 0;
     }
-    document.getElementById("hr").innerHTML = hr;
-    document.getElementById("min").innerHTML = min;
-    document.getElementById("sec").innerHTML = sec;
-    document.getElementById("count").innerHTML = count;
+
+    // to string
+    let hrString = hr;
+    let minString = min;
+    let secString = sec;
+    let countString = count;
+
+    if (hr < 10) {
+      hrString = "0" + hrString;
+    }
+    if (min < 10) {
+      minString = "0" + minString;
+    }
+
+    if (sec < 10) {
+      secString = "0" + secString;
+    }
+    if (count < 10) {
+      countString = "0" + countString;
+    }
+
+    document.getElementById("hr").innerHTML = hrString;
+    document.getElementById("min").innerHTML = minString;
+    document.getElementById("sec").innerHTML = secString;
+    document.getElementById("count").innerHTML = countString;
     setTimeout("stopwatch()", 10);
   }
 }
