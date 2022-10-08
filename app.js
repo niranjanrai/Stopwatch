@@ -70,6 +70,6 @@ function stopwatch() {
     document.getElementById("min").innerHTML = minString;
     document.getElementById("sec").innerHTML = secString;
     document.getElementById("count").innerHTML = countString;
-    // setTimeout("stopwatch()", 10);
+    setTimeout("stopwatch()", 10);
   }
 }
